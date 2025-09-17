@@ -1,0 +1,80 @@
+{
+  "mcpServers": {
+    "git": {
+      "command": "npx",
+      "args": ["-y", "mcp-git"],
+      "description": "Git operations (commits, branches, diffs)"
+    },
+    "git-advanced": {
+      "command": "npx",
+      "args": ["-y", "@cyanheads/git-mcp-server"],
+      "description": "Advanced Git operations and analysis"
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "mcp-sqlite"],
+      "description": "SQLite database management"
+    },
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "enhanced-postgres-mcp-server"],
+      "description": "PostgreSQL database operations"
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "mcp-fetch"],
+      "description": "HTTP requests and web scraping"
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "description": "Memory storage for context persistence"
+    },
+    "everything": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-everything"],
+      "description": "Comprehensive MCP server with multiple tools"
+    },
+    "claude-context": {
+      "command": "npx",
+      "args": ["-y", "@zilliz/claude-context-mcp"],
+      "description": "Claude context management with Zilliz vector database"
+    },
+    "ref-tools": {
+      "command": "npx",
+      "args": ["-y", "ref-tools-mcp"],
+      "description": "Reference and documentation tools"
+    },
+    "qdrant": {
+      "command": "/Users/besi/.local/bin/mcp-server-qdrant",
+      "args": ["--transport", "stdio"],
+      "env": {
+        "QDRANT_URL": "http://localhost:6333"
+      },
+      "description": "Qdrant vector database operations"
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "playwright-mcp"],
+      "description": "Web automation and testing with Playwright"
+    },
+    "codex": {
+      "command": "codex",
+      "args": ["mcp"],
+      "env": {
+        "CODEX_MODEL_REASONING_EFFORT": "high"
+      },
+      "description": "Advanced reasoning and code generation with Codex (high reasoning effort)"
+    },
+    "memory-agent-stdio": {
+      "command": "bash",
+      "args": ["-lc", "cd /Users/besi/.codex/mem-agent-mcp && uv run python mcp_server/server.py"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "INFO",
+        "MCP_TRANSPORT": "stdio"
+      },
+      "timeout": 600000,
+      "description": "Memory agent MCP server with stdio transport"
+    }
+  }
+}

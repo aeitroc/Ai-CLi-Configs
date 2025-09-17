@@ -1,0 +1,109 @@
+# Codex CLI configuration
+# Organized for clarity and maintainability. The active profile defines
+# runtime behavior; top-level defaults mirror it for readability.
+
+# --- Core
+profile = "full_auto_max"
+preferred_auth_method = "chatgpt"
+disable_response_storage = false
+model_auto_compact_token_limit = 200000
+
+# Global defaults (kept in sync with the active profile)
+model_provider = "openai"
+model = "gpt-5-codex"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+model_reasoning_effort = "high"
+sandbox_permissions = [
+    "disk-full-read-access",
+    "disk-full-write-access",
+    "network-full-access"
+]
+
+# --- Execution
+[shell_environment_policy]
+inherit = "all"
+
+[sandbox_workspace_write]
+network_access = true
+writable_roots = ["~/.cache"]
+
+# --- Profiles
+[profiles.full_auto_max]
+model_provider = "openai"
+model = "gpt-5-codex"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+sandbox_permissions = [
+    "disk-full-read-access",
+    "disk-full-write-access",
+    "network-full-access"
+]
+model_auto_compact_token_limit = 200000
+model_reasoning_effort = "high"
+[tools] 
+web_search = true
+
+[projects]
+[projects."/Users/besi/Desktop/_Projects/"]
+trust_level = "trusted"
+approval_mode = "full-access"
+model_reasoning_effort = "high"
+full-auto = true
+bypass-approvals = true
+bypass-sandbox = true
+trusted-workspace = true
+network_access = true
+
+
+
+[mcp_servers]
+[mcp_servers.filesystem]
+# Simple, safe MCP server that exposes read/write access to specific folders.
+# Fixed: Use proper directory arguments
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-filesystem", "/Users/besi/Desktop", "/Users/besi/Downloads"]
+
+
+[mcp_servers.github]
+# MCP server that provides access to the GitHub API.
+# Requires a GITHUB_PERSONAL_ACCESS_TOKEN environment variable to be set.
+# You can create one at https://github.com/settings/tokens?type=beta
+command = "docker"
+args = ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN=your-pat-api-key", "ghcr.io/github/github-mcp-server", "stdio"]
+
+
+[mcp_servers.qdrant]
+# Qdrant vector database operations
+# Connected to Docker container for Codex memory persistence
+command = "/Users/besi/.local/bin/mcp-server-qdrant"
+args = ["--transport", "stdio"]
+description = "Qdrant vector database operations"
+
+[mcp_servers.qdrant.env]
+QDRANT_URL = "http://localhost:6333"
+
+[mcp_servers.puppeteer]
+# Puppeteer MCP server for browser automation and web scraping
+# Provides tools for controlling headless Chrome via Puppeteer
+command = "npx"
+args = ["-y", "@hisma/server-puppeteer"]
+
+
+
+[mcp_servers.sequential-thinking]
+# Sequential Thinking MCP server for structured problem-solving
+# Provides tools for step-by-step reasoning and thought processes
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+
+
+
+[mcp_servers.context7]
+# Context7 MCP server for context management and memory
+# Provides tools for managing context and semantic search capabilities
+command = "npx"
+args = ["-y", "@upstash/context7-mcp", "--api-key", "your-api-key"]
+
+
+
