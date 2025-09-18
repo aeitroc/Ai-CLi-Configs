@@ -2,9 +2,7 @@
 
 This directory contains configuration files for enhancing the capabilities of AI assistants like Claude and Codex. The primary configuration is for the Model Context Protocol (MCP), which allows the AI to interact with various external tools and services.
 
-## `.mcp-servers.json`
 
-This file defines a collection of MCP servers that provide different functionalities to the AI assistant. Each server is a tool that the AI can use to perform tasks such as interacting with Git, databases, web pages, and more.
 
 ### How it Works
 
