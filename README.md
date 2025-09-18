@@ -1,4 +1,4 @@
-# AI Assistant Configuration
+# Collection of MCP servers and Configs for Claude and Codex.
 
 This directory contains configuration files for enhancing the capabilities for Claude Code and Codex. The primary configuration is for the Model Context Protocol (MCP), which allows the AI to interact with various external tools and services.
 
