@@ -1,8 +1,6 @@
 # AI Assistant Configuration
 
-This directory contains configuration files for enhancing the capabilities of AI assistants like Claude and Codex. The primary configuration is for the Model Context Protocol (MCP), which allows the AI to interact with various external tools and services.
-
-
+This directory contains configuration files for enhancing the capabilities for Claude Code and Codex. The primary configuration is for the Model Context Protocol (MCP), which allows the AI to interact with various external tools and services.
 
 ### How it Works
 
@@ -10,7 +8,7 @@ When an AI assistant needs to use a tool, it references one of the servers defin
 
 ### Configured MCP Servers
 
-Below is a table detailing the servers configured in `.mcp-servers.json`.
+Below is a table detailing the servers configured in for Claude Code and Codex.
 
 | Server Name | Description | Command/Package |
 | :--- | :--- | :--- |
@@ -35,10 +33,6 @@ Several servers have custom configurations worth noting:
 *   **`qdrant`**: Connects to a local Qdrant instance at `http://localhost:6333`.
 *   **`codex`**: Configured for high reasoning effort by setting the `CODEX_MODEL_REASONING_EFFORT` environment variable.
 *   **`memory-agent-stdio`**: Runs a local Python-based MCP server from `/Users/besi/.codex/mem-agent-mcp` using `uv`.
-
-## Usage
-
-These configurations are likely loaded by an AI client or development environment that supports the Model Context Protocol. Ensure that the client is configured to read the `.mcp-servers.json` file from this directory.
 
 ### Prerequisites
 
