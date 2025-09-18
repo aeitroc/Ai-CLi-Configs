@@ -17,7 +17,14 @@ model_reasoning_effort = "high"
 sandbox_permissions = [
     "disk-full-read-access",
     "disk-full-write-access",
-    "network-full-access"
+    "network-full-access",
+    "Bash(chmod:*)",
+    "Bash(scutil:*)",
+    "Bash(scp:*)",
+    "Bash(brew install:*)",
+    "Bash(sudo wg-quick:*)",
+    "Bash(brew search:*)",
+    "Bash(wg-quick up:*)"
 ]
 
 # --- Execution
@@ -49,6 +56,7 @@ web_search = true
 trust_level = "trusted"
 approval_mode = "full-access"
 model_reasoning_effort = "high"
+sandbox_mode = "danger-full-access"
 full-auto = true
 bypass-approvals = true
 bypass-sandbox = true
