@@ -52,7 +52,7 @@ model_reasoning_effort = "high"
 web_search = true
 
 [projects]
-[projects."/Users/besi/Desktop/_Projects/"]
+[projects."/Users/besi/Desktop/"]
 trust_level = "trusted"
 approval_mode = "full-access"
 model_reasoning_effort = "high"
@@ -70,7 +70,7 @@ network_access = true
 # Simple, safe MCP server that exposes read/write access to specific folders.
 # Fixed: Use proper directory arguments
 command = "npx"
-args = ["-y", "@modelcontextprotocol/server-filesystem", "/Users/besi/Desktop", "/Users/besi/Downloads"]
+args = ["-y", "@modelcontextprotocol/server-filesystem", "/"]
 
 
 [mcp_servers.github]
